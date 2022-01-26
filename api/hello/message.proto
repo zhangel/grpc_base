@@ -1,0 +1,30 @@
+syntax="proto3";
+option go_package="grpc_base/api/hello";
+package api.hello;
+
+message SetInfo_Response{
+    int32   error = 1;
+    string  msg   = 2; 
+}
+
+message SetInfo_Request{
+    string  query = 1; 
+}
+
+message UserInfo {
+    int32   id          =   1;
+    string  username    =   2;
+    string  address     =   3;
+}
+
+message GetInfo_Response {
+    int32     error     =   1;
+    string    msg       =   2;
+    UserInfo  data      =   3; 
+}
+
+message GetInfo_Request {
+    string query = 1;
+}
+
+

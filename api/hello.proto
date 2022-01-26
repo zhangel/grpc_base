@@ -1,0 +1,14 @@
+syntax="proto3";
+option go_package= "grpc_base/api";
+package api;
+import "google/api/annotations.proto";
+import "grpc_base/api/hello/message.proto";
+
+service HelloService {
+    rpc SetInfo(api.hello.SetInfo_Request) returns (api.hello.SetInfo_Response);
+    rpc GetInfo(api.hello.GetInfo_Request) returns (api.hello.GetInfo_Response) {
+        option (google.api.http) = {
+            get : "/hummer/biz/biz_list"
+        };
+    }
+}
